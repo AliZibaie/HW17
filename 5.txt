@@ -1,0 +1,12 @@
+in route : web.php -> defined routes in our web application with the methods for every pages will be in this file
+sometimes we may have multiple methods via a single page
+this web.php is essentially work by a middleware called web that is used in RouteServiceProvider
+and this provider is being registered (bootstrapped) in config/app.php / providers array
+api.php -> like web it has a api middleware and the usage is 
+to define api to recieve or send data,like front end developer uses these apis to enteract with our backend
+
+in resources folder we have all static files containing html,css,javascript for every pages,and the usage of blade template engine
+is here and we must define pages for every routes according to the method type
+(php artisan make:view posts.index) creates index.php in folder of posts in views
+
+but in route/web.php Route::resource('posts') will create all crud for posts (convention over configuration)
