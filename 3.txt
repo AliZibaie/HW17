@@ -1,0 +1,10 @@
+basically it compiles all languages into html language and renders it.
+template engines enable you to use easily different components like footer,header,navbar,bodies(every pages)
+and avoid duplication codes
+what if you use logic in your static files(between html codes)? that would be so complicated and bad looking
+but by template engine you enjoy coding and interact with defferent languages
+1.blade(is used in laravel)
+2.twig (is used in symfoni)
+3.Mustache
+4.EJS Embedded JavaScript Templates
+5.vuejs
