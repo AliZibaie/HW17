@@ -1,0 +1,2 @@
+artisan is a command line interface for laravel to easily create files with folders ,run application 
+and generally assists you to build your application faster
