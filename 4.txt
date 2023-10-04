@@ -1,0 +1,43 @@
+reqeust life cycle :
+1. client sends an HTTP request (get,post,put,patch,delete,destroy,show, ...)
+
+2.a web server(apache,nginx,tomcat) receive this request and forwards requests to php interpreter
+and to configure this for apache we use ,.htaccess file to rewrite url to go in public/index.php
+and for nginx we must change it in <virtualhost> </virtualhost>
+
+3.now we are in index.php that first checks if we are on maintenance mode(php artisan down)
+and then loads all composer dependencies and packages and composer autoloader
+and loads bootstrapping file to bootstrape our application(making an instace of our application)
+
+4.now http kernel is is working:The HTTP kernel is responsible
+for managing the request and response objects, as well as handling middleware.
+Middleware are filters that can perform tasks such as authentication, logging, and more(chain of responsibility), 
+before or after the request reaches your application’s core logic.
+
+5.service providers :Before reaching the actual route handling, Laravel’s service providers come into play. 
+Service providers are responsible for binding services into the service container,which is essentially Laravel’s way of managing 
+class instances. Service providers are a crucial part of Laravel’s dependency injection and service binding system.
+
+6.routing : Now, the request enters the routing phase. Laravel’s router examines the incoming request’s URI and determines
+which route matches it. Routes in Laravel are defined in the routes/web.php or routes/api.php files. Once a matching route is found,
+Laravel executes the associated controller method or closure.
+
+7.requets : validates requests before going to controllers
+
+8.controller : The controller handles the request by processing the data, interacting with models,
+and preparing the response. It acts as the intermediary between the route and the core logic of your application.
+
+9.model : Laravel encourages the use of models to interact with the database. 
+Models represent database tables and provide an elegant way to query and manipulate data. 
+If the controller needs to fetch or modify data, it typically delegates these tasks to a relevant model.
+
+10.Response : After processing the request, the controller prepares a response. This response can be an HTML
+view, JSON data, or any other type of HTTP response Laravel makes it easy to return responses with various 
+HTTP status codes and content types.
+
+10.Middleware Again  : After the controller has prepared the response, Laravel’s middleware comes back into play.
+Middleware can modify the response before it’s sent to the user, allowing for tasks like adding headers, 
+modifying content, or performing final authentication checks.
+
+11.Sending the Response : Finally, Laravel sends the response back to the user through the web server.
+The web server then delivers the response to the client’s browser, completing the request lifecycle.
