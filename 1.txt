@@ -1,0 +1,57 @@
+1.app->the core code of application ->
+                                      1.Casts ->custom casts for data in database(how to save and how to recieve from database)
+                                      (php artisan make:cast Json)
+                                      2.Console ->The Console directory contains all of your Artisan commands
+                                      (php artisan make:command bolbol)
+                                      3.Exceptions ->The Exceptions directory contains your application's 
+                                                     exception handler and is also a good 
+                                                     place to place any exceptions thrown by your application.
+                                                     (php artisan make:exception bolbol)
+                                      4.Http ->The Http directory contains your controllers, middleware, and form requests. 
+                                               Almost all of the logic to handle requests entering your application will be
+                                               placed in this directory.
+                                      (php artisan make:middleware bolbol)
+                                      (php artisan make:controller bolbol)
+                                      (php artisan make:requests bolbol)
+                                      (php artisan make:resource bolbol)
+                                      6.Models -> every table in database will be a model in this folder
+                                      (php artisan make:model bolbol)
+                                      (php artisan make:scope bolbol)
+                                      7.Providers ->  Service providers are the central place to configure your application
+                                                      in config/app.php
+                                      (php artisan make:provider bolbol)
+
+2.bootstrap -> there we have app.php 
+(create an instance of our application and it creates all laravel components
+and in version of controll container to bind our various parts
+and bind important interfaces by singleton pattern and eventually return it and require it in
+index.php and now we access $app) 
+and cache folder
+
+3.config ->contains all of your application's configuration files and environment variables(.env file)
+there we have app.php where if we define a service provider we must add it into providers array
+
+4.database ->
+            1.factories -> define what attribute and how many data be generated
+            (php artisan make:factory ModelFactory)
+            2.migrations -> Migrations are like version control for your database
+            (php artisan make:model Model)
+            3.seeders -> generate random data in your tables
+            (php artisan make:seed DatabaseSeeder)
+            Note: In Factory, we can also generate data related to the relationship while in DB Seeder we cannot do that
+
+5.public -> all the requests and all kind of that will go in index.php and every page will load in this file and it
+is also an entry to our application and its assets of front(js,css,images,fonts,...)
+
+6.resources ->our static files (views .blade.php) and un-compiled assets(css,js)
+(php artisan make:view bolbol)
+
+7.routes -> contains all routes web.php (for web applications) api.php (to interact it by api) console.php and channel.php
+
+8.storage ->contains our logs(every time we visit our pages,errors,... will be displaced in here with timestamp)
+app/public directory(is for users generated data like profile images and uploaded files,...)
+The framework directory is used to store framework generated files and caches
+
+9.tests->The tests directory contains your automated tests
+
+10.vendor ->composer dependencies and packages
